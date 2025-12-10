@@ -1,0 +1,798 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Mini e-Learning Platform – Specifications Document &#8212; GeekCamp2.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/En/e-Learning_Platform';</script>
+    <script src="../../_static/js/lang.js?v=a9b36ae9"></script>
+    <link rel="icon" href="../../_static/Logo_01.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Specifications Document - CV Creation Platform" href="SpecificationsDocument-CVCreationPlatform.html" />
+    <link rel="prev" title="Welcome to the TechGeeks Book!" href="../../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Logo_03.png" class="logo__image only-light" alt="GeekCamp2.0 - Home"/>
+    <img src="../../_static/Logo_03.png" class="logo__image only-dark pst-js-only" alt="GeekCamp2.0 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to the TechGeeks Book!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">TG Terms of Reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Mini e-Learning Platform – Specifications Document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SpecificationsDocument-CVCreationPlatform.html">Specifications Document - CV Creation Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="student_card_project.html">Student Card Generator Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="error_message_explainer_project.html">Error Message Explainer Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="event_management_platform.html">University Events Management Platform Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="password_manager_project.html">Password Manager Lite Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ar/e-Learning_Platform.html">منصّة تعليم إلكتروني مصغّرة – دفتر الشروط</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ar/SpecificationsDocument-CVCreationPlatform.html">دفتر الشروط - منصة إنشاء السيرة الذاتية</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ar/student_card_project.html">مواصفات مولد بطاقة الطالب</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ar/error_message_explainer_project.html">مواصفات مفسر رسائل الأخطاء</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ar/event_management_platform.html">مواصفات منصة إدارة الفعاليات الجامعية</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ar/password_manager_project.html">مواصفات مدير كلمات المرور الخفيف (Password Manager Lite)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/TechGeeks-Club/GeekCamp2.0" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/TechGeeks-Club/GeekCamp2.0/issues/new?title=Issue%20on%20page%20%2Fsrc/En/e-Learning_Platform.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/En/e-Learning_Platform.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Mini e-Learning Platform – Specifications Document</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement"><strong>1. Problem Statement</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-objective"><strong>Project Objective:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-audience"><strong>2. Target Audience</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#students-learners"><strong>Students &amp; Learners</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructors-teachers"><strong>Instructors / Teachers</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-objectives"><strong>3. Project Objectives</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-features"><strong>4. Integrated Features</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#home-page"><strong>1️ Home Page</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#courses-catalog-courses-list"><strong>2️ Courses Catalog (Courses List)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-details-page"><strong>3️ Course Details Page</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#student-area-pseudo-login"><strong>4️ Student Area – Pseudo Login</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#student-profile-page"><strong>5️ Student Profile Page</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-backend-json-api"><strong>6️ Mini Backend – JSON API</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables"><strong>5. Deliverables</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figma-prototype">** Figma Prototype**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-frontend">** Functional Frontend**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-backend">** Functional Backend**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-demo-pitch">** Functional Demo (Pitch)**</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements"><strong>6. Technical Requirements</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frontend">** Frontend**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backend">** Backend**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-database">** Simple Database**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ui-design">** UI Design**</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>7. Conclusion</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="mini-e-learning-platform-specifications-document">
+<h1>Mini e-Learning Platform – Specifications Document<a class="headerlink" href="#mini-e-learning-platform-specifications-document" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<section id="problem-statement">
+<h2><strong>1. Problem Statement</strong><a class="headerlink" href="#problem-statement" title="Link to this heading">#</a></h2>
+<p>In both academic and professional environments, students and learners often lack simple, fast, and accessible platforms to view courses, follow short training sessions, or explore new educational content.</p>
+<p>Existing platforms are frequently too complex or require advanced account setup, which is not ideal for small trainings or mini-hackathons.</p>
+<section id="project-objective">
+<h3><strong>Project Objective:</strong><a class="headerlink" href="#project-objective" title="Link to this heading">#</a></h3>
+<p>Create a <strong>Mini e-Learning Platform</strong> that allows students to quickly access several courses, view detailed course content (text + mockup video), and use a simplified student login system.</p>
+<p>The platform aims to provide a smooth, intuitive, and accessible educational experience for all.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="target-audience">
+<h2><strong>2. Target Audience</strong><a class="headerlink" href="#target-audience" title="Link to this heading">#</a></h2>
+<section id="students-learners">
+<h3><strong>Students &amp; Learners</strong><a class="headerlink" href="#students-learners" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Need quick access to short, well-organized courses.</p></li>
+<li><p>Want a clear overview of available modules.</p></li>
+<li><p>Require a simple student space for personalization.</p></li>
+</ul>
+</section>
+<section id="instructors-teachers">
+<h3><strong>Instructors / Teachers</strong><a class="headerlink" href="#instructors-teachers" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Want to publish simplified courses (3–4 modules).</p></li>
+<li><p>Need a minimal tool to present lessons in a structured manner.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="project-objectives">
+<h2><strong>3. Project Objectives</strong><a class="headerlink" href="#project-objectives" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Provide a simple and intuitive e-learning platform.</p></li>
+<li><p>Display a list of courses with titles, descriptions, and images.</p></li>
+<li><p>Allow users to view detailed course content.</p></li>
+<li><p>Integrate a mockup video in the course page (embed or image).</p></li>
+<li><p>Implement a simple student login (username/password).</p></li>
+<li><p>Build a minimal backend: API <code class="docutils literal notranslate"><span class="pre">/courses</span></code> and <code class="docutils literal notranslate"><span class="pre">/students</span></code>.</p></li>
+<li><p>Deliver a modern, responsive, and user-friendly design.</p></li>
+<li><p>Provide an interactive prototype (Figma).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="integrated-features">
+<h2><strong>4. Integrated Features</strong><a class="headerlink" href="#integrated-features" title="Link to this heading">#</a></h2>
+<section id="home-page">
+<h3><strong>1️ Home Page</strong><a class="headerlink" href="#home-page" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>General presentation of the platform.</p></li>
+<li><p>Simple tagline (e.g., <em>Learn fast. Learn smart.</em>).</p></li>
+<li><p>“Our Courses” section showing course previews.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="courses-catalog-courses-list">
+<h3><strong>2️ Courses Catalog (Courses List)</strong><a class="headerlink" href="#courses-catalog-courses-list" title="Link to this heading">#</a></h3>
+<p>A list of 3 to 4 available courses.<br />
+Each course includes:</p>
+<ul class="simple">
+<li><p>Title</p></li>
+<li><p>Image / thumbnail</p></li>
+<li><p>Short description</p></li>
+<li><p>“View Course” button</p></li>
+</ul>
+<p><strong>Backend Endpoint:</strong><br />
+<code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/courses</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="course-details-page">
+<h3><strong>3️ Course Details Page</strong><a class="headerlink" href="#course-details-page" title="Link to this heading">#</a></h3>
+<p>For each course:</p>
+<ul class="simple">
+<li><p>Banner or course image</p></li>
+<li><p>Full description</p></li>
+<li><p>Integrated mockup video</p></li>
+<li><p>“What you will learn” section</p></li>
+<li><p>“Start” or “Continue” button</p></li>
+</ul>
+<p><strong>Backend Endpoint:</strong><br />
+<code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/courses/:id</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="student-area-pseudo-login">
+<h3><strong>4️ Student Area – Pseudo Login</strong><a class="headerlink" href="#student-area-pseudo-login" title="Link to this heading">#</a></h3>
+<p>Simple login system:</p>
+<ul class="simple">
+<li><p>Login form</p></li>
+<li><p>No advanced security (localStorage + mock API)</p></li>
+<li><p>After login → Student Profile Page:</p>
+<ul>
+<li><p>Name</p></li>
+<li><p>Last viewed course</p></li>
+<li><p>Progress (fake)</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Backend Endpoints:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/students/login</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/students/:id</span></code></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="student-profile-page">
+<h3><strong>5️ Student Profile Page</strong><a class="headerlink" href="#student-profile-page" title="Link to this heading">#</a></h3>
+<p>Displays:</p>
+<ul class="simple">
+<li><p>Name &amp; avatar (mock)</p></li>
+<li><p>Courses followed</p></li>
+<li><p>Progress (bars or numbers)</p></li>
+<li><p>Logout button</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="mini-backend-json-api">
+<h3><strong>6️ Mini Backend – JSON API</strong><a class="headerlink" href="#mini-backend-json-api" title="Link to this heading">#</a></h3>
+<p>Minimal backend for:</p>
+<ul class="simple">
+<li><p>Listing courses</p></li>
+<li><p>Course details</p></li>
+<li><p>Student login management</p></li>
+<li><p>(Optional) Saving progress</p></li>
+</ul>
+<p><strong>Required API routes:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/courses</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/courses/:id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/students</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/students/login</span></code></p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="deliverables">
+<h2><strong>5. Deliverables</strong><a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<section id="figma-prototype">
+<h3>** Figma Prototype**<a class="headerlink" href="#figma-prototype" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Interactive mockups</p></li>
+<li><p>Clear UI/UX architecture</p></li>
+<li><p>Navigation: <em>home → courses → details → login → profile</em></p></li>
+</ul>
+</section>
+<section id="functional-frontend">
+<h3>** Functional Frontend**<a class="headerlink" href="#functional-frontend" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>HTML/CSS (or React, Vue, Flutter Web…)</p></li>
+<li><p>Fully responsive</p></li>
+<li><p>Modern and pleasant interface</p></li>
+</ul>
+</section>
+<section id="functional-backend">
+<h3>** Functional Backend**<a class="headerlink" href="#functional-backend" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Simple REST API</p></li>
+<li><p>JSON format</p></li>
+<li><p>Minimum routes: <code class="docutils literal notranslate"><span class="pre">/courses</span></code> and <code class="docutils literal notranslate"><span class="pre">/students</span></code></p></li>
+</ul>
+</section>
+<section id="functional-demo-pitch">
+<h3>** Functional Demo (Pitch)**<a class="headerlink" href="#functional-demo-pitch" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>5–7 minute presentation</p></li>
+<li><p>Concept explanation</p></li>
+<li><p>Prototype + website demonstration</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="technical-requirements">
+<h2><strong>6. Technical Requirements</strong><a class="headerlink" href="#technical-requirements" title="Link to this heading">#</a></h2>
+<section id="frontend">
+<h3>** Frontend**<a class="headerlink" href="#frontend" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Responsive design</p></li>
+<li><p>Clear structure</p></li>
+<li><p>Pages: Home, Courses, Course Details, Login, Profile</p></li>
+</ul>
+</section>
+<section id="backend">
+<h3>** Backend**<a class="headerlink" href="#backend" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>RESTful API</p></li>
+<li><p>Static or dynamic JSON</p></li>
+</ul>
+</section>
+<section id="simple-database">
+<h3>** Simple Database**<a class="headerlink" href="#simple-database" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>JSON, SQLite, or MySQL (your choice)</p></li>
+</ul>
+<p><strong>Recommended tables:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">courses</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">students</span></code></p></li>
+<li><p>(optional) <code class="docutils literal notranslate"><span class="pre">progress</span></code></p></li>
+</ul>
+</section>
+<section id="ui-design">
+<h3>** UI Design**<a class="headerlink" href="#ui-design" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Modern and minimalistic</p></li>
+<li><p>Consistent colors</p></li>
+<li><p>Lightweight icons</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="conclusion">
+<h2><strong>7. Conclusion</strong><a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>The <strong>Mini e-Learning Platform</strong> project is an excellent combination of:</p>
+<ul class="simple">
+<li><p><strong>Frontend</strong> (UI/UX, page structure, design)</p></li>
+<li><p><strong>Backend</strong> (minimal yet functional API)</p></li>
+<li><p><strong>Prototyping</strong></p></li>
+<li><p><strong>Collaborative teamwork</strong></p></li>
+</ul>
+<p>It enables the creation of a small, modern, clear, and effective platform that can be fully achieved during a hackathon.</p>
+<hr class="docutils" />
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src\En"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to the TechGeeks Book!</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="SpecificationsDocument-CVCreationPlatform.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Specifications Document - CV Creation Platform</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement"><strong>1. Problem Statement</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-objective"><strong>Project Objective:</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-audience"><strong>2. Target Audience</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#students-learners"><strong>Students &amp; Learners</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructors-teachers"><strong>Instructors / Teachers</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-objectives"><strong>3. Project Objectives</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-features"><strong>4. Integrated Features</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#home-page"><strong>1️ Home Page</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#courses-catalog-courses-list"><strong>2️ Courses Catalog (Courses List)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-details-page"><strong>3️ Course Details Page</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#student-area-pseudo-login"><strong>4️ Student Area – Pseudo Login</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#student-profile-page"><strong>5️ Student Profile Page</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-backend-json-api"><strong>6️ Mini Backend – JSON API</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables"><strong>5. Deliverables</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#figma-prototype">** Figma Prototype**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-frontend">** Functional Frontend**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-backend">** Functional Backend**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-demo-pitch">** Functional Demo (Pitch)**</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-requirements"><strong>6. Technical Requirements</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frontend">** Frontend**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backend">** Backend**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-database">** Simple Database**</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ui-design">** UI Design**</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>7. Conclusion</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By TechGeeks
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

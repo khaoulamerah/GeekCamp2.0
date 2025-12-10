@@ -1,0 +1,675 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Specifications Document - CV Creation Platform &#8212; GeekCamp2.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/En/Specifications Document - CV Creation Platform';</script>
+    <script src="../../_static/js/lang.js?v=a9b36ae9"></script>
+    <link rel="icon" href="../../_static/Logo_01.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/Logo_03.png" class="logo__image only-light" alt="GeekCamp2.0 - Home"/>
+    <img src="../../_static/Logo_03.png" class="logo__image only-dark pst-js-only" alt="GeekCamp2.0 - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to the TechGeeks Book!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">TG Terms of Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="e-Learning_Platform_En.html">📘 Mini e-Learning Platform – Specifications Document</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsrc/En/Specifications Document - CV Creation Platform.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/src/En/Specifications Document - CV Creation Platform.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Specifications Document - CV Creation Platform</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-project-overview">1. Introduction - Project Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-audience">2. Target Audience</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">3. Key Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-features">3.1 Core Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-language-support">3.2 Multi-Language Support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-export-options">3.3 Advanced Export Options</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pdf-export">PDF Export</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#docx-export">DOCX Export</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qr-code-generation">QR Code Generation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dashboard-and-analytics">3.4 Dashboard and Analytics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#user-dashboard">User Dashboard</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#view-statistics">View Statistics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#download-analytics">Download Analytics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qr-code-tracking">QR Code Tracking</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-reports">Detailed Reports</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">4. Deliverables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-specifications">5. Technical Specifications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compatibility">5.1 Compatibility</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-architecture-and-workflow">6. System Architecture and Workflow</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="specifications-document-cv-creation-platform">
+<h1>Specifications Document - CV Creation Platform<a class="headerlink" href="#specifications-document-cv-creation-platform" title="Link to this heading">#</a></h1>
+<section id="introduction-project-overview">
+<h2>1. Introduction - Project Overview<a class="headerlink" href="#introduction-project-overview" title="Link to this heading">#</a></h2>
+<p>The project involves creating an electronic platform that allows users to professionally design, customize, and share their resumes. In the context of increasing competition in the job market, it is essential for candidates to stand out with a well-organized and attractive resume.</p>
+<p>The platform aims to simplify the resume creation process by providing easy-to-use tools, a diverse collection of templates, multi-language support, advanced export features, and detailed analytics.</p>
+</section>
+<section id="target-audience">
+<h2>2. Target Audience<a class="headerlink" href="#target-audience" title="Link to this heading">#</a></h2>
+<p>The platform primarily targets:</p>
+<ul class="simple">
+<li><p><strong>Job Seekers</strong>: Individuals looking for employment who want to create a professional resume.</p></li>
+<li><p><strong>Students</strong>: Students entering the job market who need a resume for their first applications.</p></li>
+<li><p><strong>Professionals</strong>: Workers in transitional phases or those wishing to update their resumes for new opportunities.</p></li>
+<li><p><strong>Freelancers</strong>: Individuals who need a resume to showcase their skills and experience to potential clients.</p></li>
+<li><p><strong>International Candidates</strong>: Professionals seeking opportunities abroad who require resumes in multiple languages.</p></li>
+</ul>
+</section>
+<section id="key-features">
+<h2>3. Key Features<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h2>
+<section id="core-features">
+<h3>3.1 Core Features<a class="headerlink" href="#core-features" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>User registration and login system.</p></li>
+<li><p>User-friendly interface for creating resumes.</p></li>
+<li><p>Customizable resume templates.</p></li>
+<li><p>Options to add sections (experience, education, skills, etc.).</p></li>
+<li><p>Generation of a unique link for sharing the resume online.</p></li>
+<li><p>User profile management.</p></li>
+</ul>
+</section>
+<section id="multi-language-support">
+<h3>3.2 Multi-Language Support<a class="headerlink" href="#multi-language-support" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ability to create resumes in multiple languages.</p></li>
+<li><p>Interface available in multiple languages (Arabic, English, French, Spanish, etc.).</p></li>
+<li><p>Option to create multiple versions of the same resume in different languages.</p></li>
+<li><p>Suggested automatic translation to facilitate multi-language creation.</p></li>
+<li><p>Built-in language selector in the editor.</p></li>
+<li><p>Separate storage for each language version of the resume.</p></li>
+<li><p>Support for right-to-left (RTL) writing for languages such as Arabic.</p></li>
+</ul>
+</section>
+<section id="advanced-export-options">
+<h3>3.3 Advanced Export Options<a class="headerlink" href="#advanced-export-options" title="Link to this heading">#</a></h3>
+<section id="pdf-export">
+<h4>PDF Export<a class="headerlink" href="#pdf-export" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Generate high-quality PDF resumes.</p></li>
+<li><p>Preserve layout and design.</p></li>
+<li><p>Optimized for printing.</p></li>
+</ul>
+</section>
+<section id="docx-export">
+<h4>DOCX Export<a class="headerlink" href="#docx-export" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Generate resumes in Microsoft Word format.</p></li>
+<li><p>Fully editable document.</p></li>
+<li><p>Maintain structure and formatting.</p></li>
+</ul>
+</section>
+<section id="qr-code-generation">
+<h4>QR Code Generation<a class="headerlink" href="#qr-code-generation" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Automatic generation of a unique QR code for each resume.</p></li>
+<li><p>QR code redirects to the online version of the resume.</p></li>
+<li><p>Ability to embed the QR code directly in the PDF file.</p></li>
+<li><p>Option to download the QR code as a separate image (PNG, SVG).</p></li>
+<li><p>Customization of QR code design (colors, logo in the center).</p></li>
+</ul>
+</section>
+</section>
+<section id="dashboard-and-analytics">
+<h3>3.4 Dashboard and Analytics<a class="headerlink" href="#dashboard-and-analytics" title="Link to this heading">#</a></h3>
+<section id="user-dashboard">
+<h4>User Dashboard<a class="headerlink" href="#user-dashboard" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Overview of all created resumes.</p></li>
+<li><p>Status of each resume (draft, published, archived).</p></li>
+<li><p>Quick access to editing and sharing functions.</p></li>
+<li><p>Management of language versions for each resume.</p></li>
+</ul>
+</section>
+<section id="view-statistics">
+<h4>View Statistics<a class="headerlink" href="#view-statistics" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Total number of views for each shared resume.</p></li>
+<li><p>Charts showing views by period (day, week, month).</p></li>
+<li><p>Geographic location of visitors (country/city).</p></li>
+<li><p>Devices used (mobile, desktop, tablet).</p></li>
+</ul>
+</section>
+<section id="download-analytics">
+<h4>Download Analytics<a class="headerlink" href="#download-analytics" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Number of downloads by format (PDF, DOCX).</p></li>
+<li><p>Date and time of each download.</p></li>
+<li><p>Conversion rate (views vs. downloads).</p></li>
+</ul>
+</section>
+<section id="qr-code-tracking">
+<h4>QR Code Tracking<a class="headerlink" href="#qr-code-tracking" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Number of QR code scans.</p></li>
+<li><p>Source of scans (if available).</p></li>
+<li><p>Scan history log.</p></li>
+</ul>
+</section>
+<section id="detailed-reports">
+<h4>Detailed Reports<a class="headerlink" href="#detailed-reports" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Export statistics in CSV or PDF format.</p></li>
+<li><p>Comparison between different resumes.</p></li>
+<li><p>Data-driven improvement suggestions.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="deliverables">
+<h2>4. Deliverables<a class="headerlink" href="#deliverables" title="Link to this heading">#</a></h2>
+<p>At the end of the project, the following are expected to be delivered:</p>
+<ul class="simple">
+<li><p><strong>Website</strong>: An electronic platform accessible via browser, enabling users to create and manage their resumes in multiple languages.</p></li>
+<li><p><strong>Visual Identity</strong>: A consistent and attractive design for the platform, including logo, color palette, and graphical elements.</p></li>
+<li><p><strong>Export System</strong>: Functional modules for exporting to PDF and DOCX formats and generating QR codes.</p></li>
+<li><p><strong>Analytics Dashboard</strong>: A complete interface for tracking and analyzing resume performance.</p></li>
+<li><p><strong>Documentation</strong>: User guide and technical documentation.</p></li>
+</ul>
+</section>
+<section id="technical-specifications">
+<h2>5. Technical Specifications<a class="headerlink" href="#technical-specifications" title="Link to this heading">#</a></h2>
+<section id="compatibility">
+<h3>5.1 Compatibility<a class="headerlink" href="#compatibility" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Compatible with major browsers (Chrome, Firefox, Safari, Edge).</p></li>
+<li><p>Responsive design for mobile phones and tablets.</p></li>
+<li><p>Support for different writing directions (left-to-right/right-to-left).</p></li>
+</ul>
+</section>
+</section>
+<section id="system-architecture-and-workflow">
+<h2>6. System Architecture and Workflow<a class="headerlink" href="#system-architecture-and-workflow" title="Link to this heading">#</a></h2>
+<p>The platform consists of 6 main modules (Authentication, Creation/Editing, Multi-Language Support, Export, Analytics, and Sharing) that work together seamlessly to provide a smooth user experience from registration to sharing the resume and tracking its statistics.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./src\En"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-project-overview">1. Introduction - Project Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-audience">2. Target Audience</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">3. Key Features</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-features">3.1 Core Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-language-support">3.2 Multi-Language Support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-export-options">3.3 Advanced Export Options</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pdf-export">PDF Export</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#docx-export">DOCX Export</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qr-code-generation">QR Code Generation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dashboard-and-analytics">3.4 Dashboard and Analytics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#user-dashboard">User Dashboard</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#view-statistics">View Statistics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#download-analytics">Download Analytics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qr-code-tracking">QR Code Tracking</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-reports">Detailed Reports</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deliverables">4. Deliverables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technical-specifications">5. Technical Specifications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compatibility">5.1 Compatibility</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-architecture-and-workflow">6. System Architecture and Workflow</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By TechGeeks
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

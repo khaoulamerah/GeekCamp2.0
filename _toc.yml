@@ -1,0 +1,28 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+
+
+parts:
+  - caption: TG Terms of Reference
+    chapters:
+    - file: src/En/e-Learning_Platform.ipynb
+    - file: src/En/SpecificationsDocument-CVCreationPlatform.ipynb
+    - file: src/En/student_card_project.ipynb
+    - file: src/En/error_message_explainer_project.ipynb
+    - file: src/En/event_management_platform.ipynb
+    - file: src/En/password_manager_project.ipynb
+
+    - file: src/Ar/e-Learning_Platform.ipynb
+    - file: src/Ar/SpecificationsDocument-CVCreationPlatform.ipynb
+    - file: src/Ar/student_card_project.ipynb
+    - file: src/Ar/error_message_explainer_project.ipynb
+    - file: src/Ar/event_management_platform.ipynb
+    - file: src/Ar/password_manager_project.ipynb
+
+
+
+
+

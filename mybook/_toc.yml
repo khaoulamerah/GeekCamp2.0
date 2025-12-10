@@ -11,14 +11,16 @@ parts:
     - file: src/En/e-Learning_Platform_En.ipynb
     - file: src/En/SpecificationsDocument-CVCreationPlatform.ipynb
     - file: src/En/student_card_project.ipynb
-    - file: src/En/error_message_explainer_project_AR.ipynb
+    - file: src/En/error_message_explainer_project.ipynb
     - file: src/En/event_management_platform.ipynb
+    - file: src/En/password_manager_project.ipynb
 
     - file: src\Ar\e-Learning_Platform_Ar.ipynb
     - file: src\Ar\SpecificationsDocument-CVCreationPlatform_Ar.ipynb
     - file: src\Ar\student_card_project_AR.ipynb
     - file: src\Ar\error_message_explainer_project_AR.ipynb
     - file: src\Ar\event_management_platfrom_AR.ipynb
+    - file: src\Ar\password_manager_project_AR.ipynb
 
 
 

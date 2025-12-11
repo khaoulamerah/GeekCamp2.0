@@ -26,7 +26,7 @@ parts:
     - file: src/Ar/password_manager_project.ipynb
     - file: src/Ar/MiniHealthcareSystem.ipynb
     - file: src/Ar/MiniSchoolManagementSystem.ipynb
-    # - file: src/Ar/.ipynb
+    - file: src/Ar/CMS.ipynb
 
 
 
